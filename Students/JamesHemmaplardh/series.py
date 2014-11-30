@@ -30,3 +30,6 @@ def sum_series(a, b=0, c=1):
         return c 
     else:
         return sum_series(a-1, b, c) + sum_series(a-2, b, c)
+
+assert (fibonacci >=0, lucas >= 0, sum_series >= 0), "n, a, b and c are positive integers"
+# the assert statment ensures that the functions above use only arguments that are positve integers 
