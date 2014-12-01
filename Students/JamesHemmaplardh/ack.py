@@ -1,5 +1,8 @@
 def ack2(M, N):
-    if M == 0:
+	"""This function is a total computable function that is not primitive recursive and only takes positive integers."""
+    if M <= 0:
+    	return None
+    elif M == 0:
         return N + 1
     elif N == 0:
         return ack1(M - 1, 1)
