@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# add that line laters
+# add that line later
 
 Fruits = ["Apples", "Pears", "Oranges", "Peaches"]
 print Fruits
@@ -25,6 +25,19 @@ print Fruits
 RemoveFruit = raw_input('What fruit do you hate?')
 Fruits.remove(RemoveFruit)
 print Fruits
+for x in Fruits:
+    RateFruit = raw_input('Do you like fruit ') 
+    if RateFruit in Fruits:
+    	Fruits.remove(RateFruit)
+    else:
+    	print RateFruit, "not a valid input, type yes or no"
+print Fruits
 
 
-#RateFruit =raw_input('Do you like fruit')
+#'hi'[::-1] = 'ih'
+for i in reversed(NewFruits):
+	print i
+Fruits.pop()
+print Fruits
+print NewFruits
+
