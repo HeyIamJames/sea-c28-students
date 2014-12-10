@@ -1,3 +1,5 @@
+"""This takes a dictionary, adds values, changes them and displays those chages."""
+
 Dict = {"name": "Chris", "city": "Seattle", "cake": "chocolate"}
 print Dict
 del Dict["cake"]
