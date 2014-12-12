@@ -27,11 +27,11 @@ s2 = set()
 s3 = set()
 s4 = set()
 for i in range(21):
-	if not i % 2:
-		s2.add(i)
-	if not i % 3:
+    if i % 2 == False:
+        s2.add(i)
+	if i % 3 == False:
 		s3.add(i)
-	if not i % $:
+	if i % 4 == False:
 		s4.add(i)
 
 print s2
@@ -46,6 +46,6 @@ Set1.add('i')
 print Set1
 
 Set2 = frozenset("marathon")
-print Set1.Union(Set2)
+print Set1.union(Set2)
 print Set1.intersection(Set2)
 
