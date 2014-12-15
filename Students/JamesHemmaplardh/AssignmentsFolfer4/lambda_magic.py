@@ -1,8 +1,5 @@
-def make_incrementor (n): return lambda x: x + n
+#make a function to return a list of functions 
 
-foo = range(10)
-print filter(lambda x: x % 3 == 0, foo)
-print map(lambda x: x * 2 + 10, foo)
-print reduce(lambda x, y: x + y, foo)
+x = [(lambda arg: (lambda x: arg + x))(i) for i in range(11)]
 
 #if __name__ == "__main__":
