@@ -29,7 +29,7 @@ class P(Element):
 
 class SelfClosingTag(Element):
 	def render(self, file_out, ind = "    "):
-		file_out.write('render meathod') 
+		file_out.write('{}<{}{} />\n'.format(ind, sef.tag, self.attributes)
 
 class A(OneLineTag):
     tag = u"a"
