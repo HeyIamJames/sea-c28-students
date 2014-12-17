@@ -1,15 +1,25 @@
-class Element(list):
-	opening_tag = "<>"
-	closing_tag = "</>"
-	def render(self):
-		all_out = [self.opening_tag] + self + [self.closing_tag]
+#!/usr/bin/env python
 
+class Element(object):
+    tag = u'This is a tag'
+    indent = u"    "
 
-#		output = "<>\n"
-#		output += self[0]
-#		output += "\n</>"
-		print all_out
+    def __init__(self, content= None, **kwargs):
+        if content == None:
+            self.content = []
+        else:
+            self.content = []
+        
+        self.attributes = kwargs
 
-"""
-def __init__(self):
-	self.contents = []
+    def append(self, element):
+    	self.content,append(element)
+
+class Html(Element):
+	tag = u"html"
+
+class Head(Element):
+	tag = u"head"
+
+class P(Element):
+	tag = u"p"
