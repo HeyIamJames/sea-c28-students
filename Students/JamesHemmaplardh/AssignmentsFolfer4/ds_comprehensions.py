@@ -23,5 +23,12 @@ for i in range(21):
 	if i % 4 == False:
 		s4.add(i)
 
+sX = []
+for x in (2,3,4):
+    sX.append({i for i in range(21) if i % x == False})
+
+sY = [{i for i in range(21) if i % x == False} for x in (2, 3, 4)]
+
+
 
 
