@@ -6,11 +6,11 @@ food_prefs = {u"name": u"Cris",
               u"pasta": u"lasagna"}
 print('{name} is from {city}, his favorite cake is {cake}cake with a side of {fruit} and {salad}, then {name} finishes it off with a zesty {pasta}!'.format(**food_prefs))
 
-Dict1 = range(16)
-Dict2 = []
-for i in Dict1:
-	Dict2.append(hex(i))
-Dict3 = dict(zip(Dict1, Dict2))
+s1 = dict([(x, hex(x)) for x in (range(16))]) 
+
+food_prefs2 = dict(food_prefs)
+for key, val in food_prefs2.items():
+      food_prefs2[key] = val.count(u'a')
 
 s2 = set()
 s3 = set()
