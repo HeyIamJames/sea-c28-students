@@ -8,12 +8,12 @@ class Element(object):
         if content == None:
             self.content = []
         else:
-            self.content = []
+            self.content = [content]
         
         self.attributes = kwargs
 
     def append(self, element):
-    	self.content,append(element)
+    	self.content.append(element)
 
 class Html(Element):
 	tag = u"html"
@@ -29,9 +29,9 @@ class P(Element):
 
 class SelfClosingTag(Element):
 	def render(self, file_out, ind = "    "):
-		file_out.write('{}<{}{} />\n'.format(ind, sef.tag, self.attributes)
+		file_out.write('{}<{}{} />\n'.format(ind, sef.tag, self.attributes))
 
-class A(OneLineTag):
+class A(SelfClosingTag):
     tag = u"a"
     def __init__(self, link, content):
         OneLineTag.__init__(self, content, href=link)
