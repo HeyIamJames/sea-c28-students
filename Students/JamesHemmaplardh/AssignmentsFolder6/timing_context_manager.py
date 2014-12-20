@@ -9,5 +9,5 @@ if __name__ == "__main__":
 	start = time.time()
 	foo()
 	end = time.time()
-	print "elapsted time(sec):", end - start 
+	print "elapsted time(sec)", end - start 
 
