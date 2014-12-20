@@ -1,3 +1,5 @@
 def wrapper_decorator(func):
 	def wrapper(*args, **kwargs):
-	return "<p> text </p>"
+	    return u"<p>" + func(*args, **wkargs) + u"</p>"
+	return wrapper 
+
