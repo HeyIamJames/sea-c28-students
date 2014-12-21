@@ -18,10 +18,10 @@ class Circle(object):
     diameter = property(_diamater_, _diamateradius2_)
  
 
-    def _get_area(self):
+    def _getarea_(self):
         return math.pi * (self.radius ** 2)
 
-    area = property(_get_area)
+    area = property(_getarea_)
 
     def __str__(self):
         string = u'Circle with radius: ' + format(self.radius, '.6f')
@@ -38,6 +38,20 @@ class Circle(object):
         radius2 = other.radius
         circ = Circle(radius1 + radius2)
         return circ
+
+    def __mul__(self, other):
+        circ = Circle(self.radius * other)
+        return circ
+
+
+    def __eq__(self, other):
+        if self.radius == other.radius:
+            return True
+
+
+    def __le__(self, other):
+        if self.radius <= other.radius:
+            return True
 
 
 
