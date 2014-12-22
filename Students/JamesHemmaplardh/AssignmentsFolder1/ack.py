@@ -9,5 +9,9 @@ def ack(m,n):
     else:
         return ack(m - 1, ack(m, n - 1))
 
-assert (ack >= 0), "m and n are positive integers"
-# the assert statment ensures that the functions above use only arguments that are positve integers
+if __name__ == "__main__":
+	m = 3
+	n = 5
+	assert ack(m, n) == 6
+	print "Ackermans function is working."
+

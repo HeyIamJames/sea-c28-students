@@ -31,5 +31,13 @@ def sum_series(a, b=0, c=1):
     else:
         return sum_series(a-1, b, c) + sum_series(a-2, b, c)
 
-assert (fibonacci >=0, lucas >= 0, sum_series >= 0), "n, a, b and c are positive integers"
-# the assert statment ensures that the functions above use only arguments that are positve integers 
+if __name__ == "__main__":
+    x = 5
+    assert lucas(x) == 11
+    x = 7 
+    assert fibonacci(x) == 13
+    x = 3
+    y = 4
+    z = 3
+    assert sum_series(x, y, x) == 10
+    print "fibonacci, lucan adn sum_series functions are working."
