@@ -28,6 +28,21 @@ class Element(object):
                 file_out.write(item)
         file_out.write(u'\n%s</%s>' % (ind, self.tag))
 
+class OneLineTag(Element):
+
+    def render(self, file_out, ind = u"    "):
+        attributes = '  '
+        for (key,value) in self.attributes.items():
+            attributes += (' {key} = "{value}"'.format(key = key, value = value))
+        file_out.write(u'\n%s<%s%s>\n' % (ind, self.tag, attributes))
+        for item in self.content:
+            try:
+                item.render(file_out, ind + self.indent)
+            except AttributeError:
+                file_out.write(self.indent + ind)
+                file_out.write(unicode(item))
+        file_out.write(u'\n%s</%s>' % (ind, self.tag))
+
 class Html(Element):
     tag = u"html"
 
@@ -66,20 +81,6 @@ class Hr(SelfClosingTag):
 class Title(OneLineTag):
     tag = u"title"
 
-class OneLineTag(Element):
-
-    def render(self, file_out, ind = u"    "):
-        attributes = '  '
-        for (key,value) in self.attributes.items():
-            attributes += (' {key} = "{value}"'.format(key = key, value = value))
-        file_out.write(u'\n%s<%s%s>\n' % (ind, self.tag, attributes))
-        for item in self.content:
-            try:
-                item.render(file_out, ind + self.indent)
-            except AttributeError:
-                file_out.write(self.indent + ind)
-                file_out.write(unicode(item))
-        file_out.write(u'\n%s</%s>' % (ind, self.tag))
 
 
 class A(OneLineTag):
@@ -101,6 +102,6 @@ class Ul(Element):
 class Li(Element):
     tag = u"li"
 
-class M(SelfClosingTag):
+class Meta(SelfClosingTag):
     tag = u"meta"
 
