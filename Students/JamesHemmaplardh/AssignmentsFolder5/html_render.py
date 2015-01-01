@@ -29,7 +29,6 @@ class Element(object):
         file_out.write(u'\n%s</%s>' % (ind, self.tag))
 
 class OneLineTag(Element):
-
     def render(self, file_out, ind = u"    "):
         attributes = '  '
         for (key,value) in self.attributes.items():
@@ -82,7 +81,6 @@ class Title(OneLineTag):
     tag = u"title"
 
 
-
 class A(OneLineTag):
     tag = u"a"
     def __init__(self, link, content):
@@ -104,4 +102,3 @@ class Li(Element):
 
 class Meta(SelfClosingTag):
     tag = u"meta"
-

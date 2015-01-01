@@ -1,14 +1,12 @@
 
 """Test Ackermans module."""  
 
-import pytest
 from ack import ack
 
 def test_ack():
-    x = 3
-    y = 5
-    assert ack(x, y) == 6
-
+    assert ack(3, 5) == 6
+    assert ack(5, 9) == 10
+    assert ack(-2, -3) == None 
 
 # >>> ack.ack(3, 5)
 # 6

@@ -4,7 +4,6 @@
 Simple iterator examples
 """
 
-
 class IterateMe_1(object):
     """
     About as simple an iterator as you can get:
@@ -32,9 +31,11 @@ class IterateMe_2(object):
     returns the sequence of numbers from zero to 4
     ( like xrange(4) )
     """
-    def __init__(self, stop=5):
+    def __init__(self, start, stop, step=1):
+        self.start = start - step
         self.current = -1
         self.stop = stop
+        self.step = step
 
     def __iter__(self):
         return self
@@ -49,7 +50,7 @@ class IterateMe_2(object):
 
 if __name__ == "__main__":
 
-    print "first version"
+    print "second version"
     it = IterateMe_2(2, 20, 2)
     for i in it:
         if i > 10: break

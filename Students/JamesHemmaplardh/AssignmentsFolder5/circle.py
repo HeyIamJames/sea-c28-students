@@ -53,6 +53,3 @@ class Circle(object):
         if self.radius <= other.radius:
             return True
 
-
-
-
